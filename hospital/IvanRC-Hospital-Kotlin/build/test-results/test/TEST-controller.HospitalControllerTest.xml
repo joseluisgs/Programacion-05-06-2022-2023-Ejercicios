@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="controller.HospitalControllerTest" tests="19" skipped="0" failures="0" errors="0" timestamp="2023-02-14T17:27:53" hostname="IVIRC" time="1.947">
+  <properties/>
+  <testcase name="getPatientsByDni()" classname="controller.HospitalControllerTest" time="0.833"/>
+  <testcase name="hospitalIsNotEmpty()" classname="controller.HospitalControllerTest" time="0.021"/>
+  <testcase name="sortPatientsByFechaIngreso()" classname="controller.HospitalControllerTest" time="0.791"/>
+  <testcase name="introduceButHospitalFull()" classname="controller.HospitalControllerTest" time="0.013"/>
+  <testcase name="getListOfPatients()" classname="controller.HospitalControllerTest" time="0.038"/>
+  <testcase name="getListOfPatientsByType()" classname="controller.HospitalControllerTest" time="0.034"/>
+  <testcase name="idIsNotValid()" classname="controller.HospitalControllerTest" time="0.007"/>
+  <testcase name="getNumberOfPatientsByType()" classname="controller.HospitalControllerTest" time="0.017"/>
+  <testcase name="isHospitalEmpty()" classname="controller.HospitalControllerTest" time="0.008"/>
+  <testcase name="introduce()" classname="controller.HospitalControllerTest" time="0.01"/>
+  <testcase name="entityIsValid()" classname="controller.HospitalControllerTest" time="0.004"/>
+  <testcase name="getNumberOfPatients()" classname="controller.HospitalControllerTest" time="0.011"/>
+  <testcase name="giveAltaButNotFound()" classname="controller.HospitalControllerTest" time="0.016"/>
+  <testcase name="isIdValid()" classname="controller.HospitalControllerTest" time="0.002"/>
+  <testcase name="entityIsNotValid()" classname="controller.HospitalControllerTest" time="0.007"/>
+  <testcase name="giveAlta()" classname="controller.HospitalControllerTest" time="0.011"/>
+  <testcase name="hospitalIsFull()" classname="controller.HospitalControllerTest" time="0.008"/>
+  <testcase name="sortPatientsByName()" classname="controller.HospitalControllerTest" time="0.015"/>
+  <testcase name="hospitalIsNotFull()" classname="controller.HospitalControllerTest" time="0.005"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
