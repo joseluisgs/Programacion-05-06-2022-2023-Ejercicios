@@ -16,32 +16,31 @@ class HospitalRepoList(private val maxSize: Int = 50): HospitalExtension {
     }
 
     override fun pacientesOrdeFechaIngreso(): List<Paciente> {
-        // Tres formas de hacerlo
-        //return pacientes.toSortedSet{ p1, p2 -> p1.fechaIgreso.compareTo(p2.fechaIgreso) }.toList()
         return pacientes.sortedBy { it.fechaIgreso }
         //return orderBy { p1, p2 -> p1.fechaIgreso.compareTo(p2.fechaIgreso) }
     }
 
     override fun pacientesOrdeNombre(): List<Paciente> {
-        return orderBy { p1, p2 -> p1.nombre.compareTo(p2.nombre) }
+        return pacientes.sortedBy { it.nombre }
     }
 
     override fun pacientesOrdeDNI(): List<Paciente> {
-        return orderBy { p1, p2 -> p1.dni.compareTo(p2.dni) }
+        return pacientes.sortedBy { it.dni }
     }
 
-    private fun orderBy(orden: (Paciente, Paciente) -> Int): List<Paciente> {
+    /*private fun orderBy(orden: (Paciente, Paciente) -> Int): List<Paciente> {
         val list = pacientes.toMutableList()
         list.sortWith(orden)
         return list.toList()
-    }
+    }*/
 
     override fun pacientesPorTipo(tipo: TipoPaciente): List<Paciente> {
-        val list = mutableListOf<Paciente>()
+        return pacientes.filter { it.tipo == tipo }
+        /*val list = mutableListOf<Paciente>()
         for (i in pacientes){
             if (i.tipo == tipo) list.add(i)
         }
-        return list.toList()
+        return list.toList()*/
     }
 
     override fun numPacientePorTipo(tipo: TipoPaciente): Int {
@@ -53,20 +52,30 @@ class HospitalRepoList(private val maxSize: Int = 50): HospitalExtension {
 
         paciente.setFechaIngreso(LocalDate.now())
 
-        for (i in pacientes.indices) {
+        pacientes.find { it.dni == paciente.dni }?.let {
+            pacientes.remove(it)
+            pacientes.add(paciente)
+            return paciente
+        } ?: run {
+            pacientes.add(paciente)
+            return paciente
+        }
+
+        /*for (i in pacientes.indices) {
             if (paciente.dni != pacientes[i].dni) continue
             pacientes[i] = paciente
             return paciente
         }
         pacientes.add(paciente)
-        return paciente
+        return paciente*/
     }
 
     override fun find(dni: String): Paciente? {
-        for (i in pacientes){
+        return pacientes.find { it.dni == dni }
+        /*for (i in pacientes){
             if (i.dni == dni) return i
         }
-        return null
+        return null*/
     }
 
     override fun delete(dni: String): Paciente? {
@@ -82,8 +91,9 @@ class HospitalRepoList(private val maxSize: Int = 50): HospitalExtension {
 
     override fun saveAll(array: List<Paciente>) {
         if (estaCompleto()) return
-        for (i in array){
+        array.forEach{ save(it) }
+        /*for (i in array){
             save(i)
-        }
+        }*/
     }
 }

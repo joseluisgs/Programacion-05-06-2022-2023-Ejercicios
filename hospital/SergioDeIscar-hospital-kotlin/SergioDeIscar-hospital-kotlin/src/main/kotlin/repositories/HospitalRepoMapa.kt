@@ -30,12 +30,12 @@ class HospitalRepoMapa(private val maxSize: Int = 50): HospitalExtension {
     }
 
     override fun pacientesPorTipo(tipo: TipoPaciente): List<Paciente> {
-        //return pacientes.values.filter { it.tipo == tipo }
-        val list = mutableListOf<Paciente>()
+        return pacientes.values.filter { it.tipo == tipo }
+        /*val list = mutableListOf<Paciente>()
         for (i in pacientes.values){
             if (i.tipo == tipo) list.add(i)
         }
-        return list.toList()
+        return list.toList()*/
     }
 
     override fun numPacientePorTipo(tipo: TipoPaciente): Int {
@@ -65,8 +65,9 @@ class HospitalRepoMapa(private val maxSize: Int = 50): HospitalExtension {
 
     override fun saveAll(pacientes: List<Paciente>) {
         if (estaCompleto()) return
-        for (i in pacientes){
+        pacientes.forEach{ save(it) }
+        /*for (i in pacientes){
             save(i)
-        }
+        }*/
     }
 }
