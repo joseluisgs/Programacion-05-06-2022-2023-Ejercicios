@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="repositories.ItvRepositoryImplTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-02-21T12:27:22" hostname="furroneta" time="0.023">
+  <properties/>
+  <testcase name="getMediaKilometrosMotos()" classname="repositories.ItvRepositoryImplTest" time="0.012"/>
+  <testcase name="getMarcasDescendente()" classname="repositories.ItvRepositoryImplTest" time="0.002"/>
+  <testcase name="getAll()" classname="repositories.ItvRepositoryImplTest" time="0.001"/>
+  <testcase name="getCocheMasAntiguoMasDosPuertas()" classname="repositories.ItvRepositoryImplTest" time="0.001"/>
+  <testcase name="getMediaAñoPorTipo()" classname="repositories.ItvRepositoryImplTest" time="0.002"/>
+  <testcase name="getVehiculosPorMarcasOrdenKmDescendente()" classname="repositories.ItvRepositoryImplTest" time="0.001"/>
+  <testcase name="getVehiculosOrdenAño()" classname="repositories.ItvRepositoryImplTest" time="0.001"/>
+  <testcase name="getNumVehiculosPorTipo()" classname="repositories.ItvRepositoryImplTest" time="0.0"/>
+  <testcase name="getCoches()" classname="repositories.ItvRepositoryImplTest" time="0.0"/>
+  <testcase name="getVehiculoMasModerno()" classname="repositories.ItvRepositoryImplTest" time="0.0"/>
+  <testcase name="getVehiculoMenosKilometros()" classname="repositories.ItvRepositoryImplTest" time="0.0"/>
+  <testcase name="getVehiculosPorMarcas()" classname="repositories.ItvRepositoryImplTest" time="0.0"/>
+  <testcase name="getAptosPorTipo()" classname="repositories.ItvRepositoryImplTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
