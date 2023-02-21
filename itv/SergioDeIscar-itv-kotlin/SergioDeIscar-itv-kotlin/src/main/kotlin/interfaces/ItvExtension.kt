@@ -3,6 +3,7 @@ package interfaces
 import models.Vehiculo
 
 interface ItvExtension: CrudRepository<Vehiculo, String> {
+    fun isFull():Boolean
     fun getCoches(): List<Vehiculo>
     fun getCocheMaxModerno(): Vehiculo
     fun getVehiculoMinKilometros(): Vehiculo

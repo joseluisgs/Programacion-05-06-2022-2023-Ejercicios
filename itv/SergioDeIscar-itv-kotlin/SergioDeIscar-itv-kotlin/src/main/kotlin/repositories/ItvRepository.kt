@@ -3,9 +3,9 @@ package repositories
 import interfaces.ItvExtension
 import models.Vehiculo
 
-class ItvRepository(val maxSize: Int): ItvExtension {
+class ItvRepository(private val maxSize: Int = 10): ItvExtension {
     private val vehiculos = mutableMapOf<String, Vehiculo>()
-    private fun isFull():Boolean{
+    override fun isFull():Boolean{
         return vehiculos.size >= maxSize
     }
 
@@ -26,7 +26,7 @@ class ItvRepository(val maxSize: Int): ItvExtension {
     }
 
     override fun getOldestCoche(): Vehiculo {
-        return vehiculos.values.maxBy { it.anio }
+        return vehiculos.values.filter { it::class.simpleName == "Coche" }.minBy { it.anio }
     }
 
     override fun getCountVehiculos(): Map<String, Int> {
