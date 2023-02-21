@@ -17,7 +17,6 @@ dependencies {
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.4")
 
     testImplementation(kotlin("test"))
-    // Mockk para test
     testImplementation("io.mockk:mockk:1.13.3")
 }
 

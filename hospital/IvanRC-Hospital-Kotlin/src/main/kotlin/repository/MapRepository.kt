@@ -20,37 +20,11 @@ class MapRepository(val maxCapacity: Int): HospitalRepository<Paciente, String> 
     }
 
     override fun getListOfPatientsByType(type: TipoDePaciente): List<Paciente> {
-        val list = mutableListOf<Paciente>()
-        when(type){
-            TipoDePaciente.NORMAL -> {
-                for(patient in patients.values){
-                    if(patient.tipo == TipoDePaciente.NORMAL) list.add(patient)
-                }
-            }
-            TipoDePaciente.URGENCIA -> {
-                for(patient in patients.values){
-                    if(patient.tipo == TipoDePaciente.URGENCIA) list.add(patient)
-                }
-            }
-        }
-        return list.toList()
+        return patients.values.filter { it.tipo == type }.toList()
     }
 
     override fun getNumberOfPatientsByType(type: TipoDePaciente): Int {
-        var contador = 0
-        when(type){
-            TipoDePaciente.NORMAL -> {
-                for(patient in patients.values){
-                    if(patient.tipo == TipoDePaciente.NORMAL) contador++
-                }
-            }
-            TipoDePaciente.URGENCIA -> {
-                for(patient in patients.values){
-                    if(patient.tipo == TipoDePaciente.URGENCIA) contador++
-                }
-            }
-        }
-        return contador
+        return patients.values.filter { it.tipo == type }.size
     }
 
     override fun sortPatientsByFechaIngreso(): List<Paciente> {

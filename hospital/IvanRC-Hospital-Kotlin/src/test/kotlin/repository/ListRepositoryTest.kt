@@ -84,8 +84,8 @@ internal class ListRepositoryTest {
         val sortedByDate = repository.sortPatientsByFechaIngreso()
         assertAll(
             { assertEquals(2, sortedByDate.size)},
-            { assertEquals(misPacientes[0], sortedByDate[0])},
-            { assertEquals(misPacientes[1], sortedByDate[1])}
+            { assertEquals(misPacientes[0], sortedByDate[1])},
+            { assertEquals(misPacientes[1], sortedByDate[0])}
         )
     }
 

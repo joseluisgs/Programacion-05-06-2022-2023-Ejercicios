@@ -20,37 +20,11 @@ class ConjuntosRepository(val maxCapacity: Int): HospitalRepository<Paciente, St
     }
 
     override fun getListOfPatientsByType(type: TipoDePaciente): List<Paciente> {
-        val list = mutableListOf<Paciente>()
-        when(type){
-            TipoDePaciente.NORMAL -> {
-                for(patient in patients){
-                    if(patient.tipo == TipoDePaciente.NORMAL) list.add(patient)
-                }
-            }
-            TipoDePaciente.URGENCIA -> {
-                for(patient in patients){
-                    if(patient.tipo == TipoDePaciente.URGENCIA) list.add(patient)
-                }
-            }
-        }
-        return list.toList()
+        return patients.filter { it.tipo == type }.toList()
     }
 
     override fun getNumberOfPatientsByType(type: TipoDePaciente): Int {
-        var contador = 0
-        when(type){
-            TipoDePaciente.NORMAL -> {
-                for(patient in patients){
-                    if(patient.tipo == TipoDePaciente.NORMAL) contador++
-                }
-            }
-            TipoDePaciente.URGENCIA -> {
-                for(patient in patients){
-                    if(patient.tipo == TipoDePaciente.URGENCIA) contador++
-                }
-            }
-        }
-        return contador
+        return patients.filter { it.tipo == type }.size
     }
 
     override fun sortPatientsByFechaIngreso(): List<Paciente> {
@@ -62,10 +36,7 @@ class ConjuntosRepository(val maxCapacity: Int): HospitalRepository<Paciente, St
     }
 
     override fun getPatientsByDni(id: String): Paciente? {
-        for(patient in patients){
-            if(patient.dni == id) return patient
-        }
-        return null
+        return patients.find { it.dni == id }
     }
 
     override fun giveAlta(id: String): Paciente? {

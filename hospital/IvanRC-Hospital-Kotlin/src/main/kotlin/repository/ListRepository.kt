@@ -21,37 +21,11 @@ class ListRepository(val maxCapacity: Int): HospitalRepository<Paciente, String>
     }
 
     override fun getListOfPatientsByType(type: TipoDePaciente): List<Paciente> {
-        val list = mutableListOf<Paciente>()
-        when(type){
-            TipoDePaciente.NORMAL -> {
-                for(patient in patients){
-                    if(patient.tipo == TipoDePaciente.NORMAL) list.add(patient)
-                }
-            }
-            TipoDePaciente.URGENCIA -> {
-                for(patient in patients){
-                    if(patient.tipo == TipoDePaciente.URGENCIA) list.add(patient)
-                }
-            }
-        }
-        return list.toList()
+        return patients.filter { it.tipo == type }.toList()
     }
 
     override fun getNumberOfPatientsByType(type: TipoDePaciente): Int {
-        var contador = 0
-        when(type){
-            TipoDePaciente.NORMAL -> {
-                for(patient in patients){
-                    if(patient.tipo == TipoDePaciente.NORMAL) contador++
-                }
-            }
-            TipoDePaciente.URGENCIA -> {
-                for(patient in patients){
-                    if(patient.tipo == TipoDePaciente.URGENCIA) contador++
-                }
-            }
-        }
-        return contador
+        return patients.filter { it.tipo == type }.size
     }
 
     override fun sortPatientsByFechaIngreso(): List<Paciente> {
@@ -77,7 +51,7 @@ class ListRepository(val maxCapacity: Int): HospitalRepository<Paciente, String>
         return lista.toList()
         */
         // Con esto funciona correctamente la ordenación, y es más corto que la burbuja
-        return patients.sortedWith(){ p1, p2 -> p1.fechaIngreso.compareTo(p2.fechaIngreso)}.toList()
+        return patients.sortedWith{ p1, p2 -> p1.fechaIngreso.compareTo(p2.fechaIngreso)}.toList()
     }
 
     override fun sortPatientsByName(): List<Paciente> {
@@ -85,10 +59,7 @@ class ListRepository(val maxCapacity: Int): HospitalRepository<Paciente, String>
     }
 
     override fun getPatientsByDni(id: String): Paciente? {
-        for(patient in patients){
-            if(patient.dni == id) return patient
-        }
-        return null
+        return patients.find { it.dni == id }
     }
 
     override fun giveAlta(id: String): Paciente? {
