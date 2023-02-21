@@ -25,11 +25,16 @@ class ItvRepositoryImpl(repository: MutableList<Vehiculo>? = null) : ItvReposito
         return repository.minBy { it.kilometros }
     }
 
+    override fun getVehiculosMarca(marca: String): List<Vehiculo> {
+        return repository.filter { it.marca == marca }
+    }
+
     override fun getMediaKilometrosMotos(): Double {
         return repository
             .filter { it is Moto }
             .map { it.kilometros }
             .average()
+            .times(100).toInt().div(100).toDouble()
     }
 
     override fun getCocheMasAntiguoMasDosPuertas(): Coche {

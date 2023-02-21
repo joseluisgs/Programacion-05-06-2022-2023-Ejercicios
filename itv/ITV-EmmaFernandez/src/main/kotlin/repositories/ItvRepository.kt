@@ -8,6 +8,7 @@ interface ItvRepository {
     fun getCoches(): List<Coche>
     fun getVehiculoMasModerno(): Vehiculo
     fun getVehiculoMenosKilometros(): Vehiculo
+    fun getVehiculosMarca(marca: String): List<Vehiculo>
     fun getMediaKilometrosMotos(): Double
     fun getCocheMasAntiguoMasDosPuertas(): Coche
     fun getNumVehiculosPorTipo(): Map<String, Int>
