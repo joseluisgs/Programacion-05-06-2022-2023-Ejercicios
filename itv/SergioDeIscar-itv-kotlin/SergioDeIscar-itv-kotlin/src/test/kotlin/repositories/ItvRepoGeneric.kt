@@ -24,7 +24,7 @@ abstract class ItvRepoGeneric {
 
     private val vehiculos = arrayOf(
         Coche("1234ABC", "Audi", LocalDate.now().minusYears(5),
-            true, 150000, 5), // 0
+            true, 150000, 2), // 0
         Moto("1234ABD", "Ford", LocalDate.now().minusDays(40),
             false, 24000, 600), // 1
         Coche("1234ABE", "Pepe", LocalDate.now().minusYears(2),
@@ -199,6 +199,30 @@ abstract class ItvRepoGeneric {
             "Pepe" to listOf(vehiculos[2])
         )
         assertEquals(expected, repository.groupVehiculosByMarcaSortByKilometro())
+    }
+
+    @Order(3)
+    @Test
+    fun findByMarcaTest(){
+        repository.saveAll(vehiculos.toList())
+        val expected = mapOf(
+            "Audi" to listOf(vehiculos[0], vehiculos[3]),
+            "Ford" to listOf(vehiculos[1]),
+            "Pepe" to listOf(vehiculos[2])
+        )
+        assertAll(
+            { assertEquals(expected["Audi"], repository.findByMarca("Audi")) },
+            { assertEquals(expected["Ford"], repository.findByMarca("Ford")) },
+            { assertEquals(expected["Pepe"], repository.findByMarca("Pepe")) },
+            { assertContentEquals(emptyArray(), repository.findByMarca("Pepe2").toTypedArray()) }
+        )
+    }
+
+    @Order(3)
+    @Test
+    fun getOldestCoche2PuertasTest(){
+        repository.saveAll(vehiculos.toList())
+        assertEquals(vehiculos[2], repository.getOldestCoche2Puertas())
     }
     //endregion
 }

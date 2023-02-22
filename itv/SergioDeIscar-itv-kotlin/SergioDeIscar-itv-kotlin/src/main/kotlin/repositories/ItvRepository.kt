@@ -1,6 +1,7 @@
 package repositories
 
 import interfaces.ItvExtension
+import models.Coche
 import models.Vehiculo
 
 class ItvRepository(private val maxSize: Int = 10): ItvExtension {
@@ -21,12 +22,20 @@ class ItvRepository(private val maxSize: Int = 10): ItvExtension {
         return vehiculos.values.minBy { it.kilometro }
     }
 
+    override fun findByMarca(marca: String): List<Vehiculo> {
+        return vehiculos.values.filter { it.marca == marca }.toList()
+    }
+
     override fun getMediaKilometrosMotos(): Double {
         return vehiculos.values.map { it.kilometro }.average()
     }
 
     override fun getOldestCoche(): Vehiculo {
         return vehiculos.values.filter { it::class.simpleName == "Coche" }.minBy { it.anio }
+    }
+
+    override fun getOldestCoche2Puertas(): Vehiculo {
+        return vehiculos.values.filter { it::class.simpleName == "Coche" && it is Coche && it.numPuertas > 2 }.minBy { it.anio }
     }
 
     override fun getCountVehiculos(): Map<String, Int> {

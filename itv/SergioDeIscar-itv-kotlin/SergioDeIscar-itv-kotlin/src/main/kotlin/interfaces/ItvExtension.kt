@@ -7,8 +7,10 @@ interface ItvExtension: CrudRepository<Vehiculo, String> {
     fun getCoches(): List<Vehiculo>
     fun getCocheMaxModerno(): Vehiculo
     fun getVehiculoMinKilometros(): Vehiculo
+    fun findByMarca(marca: String): List<Vehiculo>
     fun getMediaKilometrosMotos(): Double
     fun getOldestCoche(): Vehiculo
+    fun getOldestCoche2Puertas(): Vehiculo
     fun getCountVehiculos(): Map<String, Int>
     fun getCountVehiculosAptos(): Map<String, Int>
     fun getMediaVehiculosAnio(): Map<String, Double>

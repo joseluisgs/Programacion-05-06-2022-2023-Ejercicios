@@ -21,12 +21,20 @@ class ItvController(val repository: ItvExtension): ItvExtension {
         return repository.getVehiculoMinKilometros()
     }
 
+    override fun findByMarca(marca: String): List<Vehiculo> {
+        return repository.findByMarca(marca)
+    }
+
     override fun getMediaKilometrosMotos(): Double {
         return repository.getMediaKilometrosMotos()
     }
 
     override fun getOldestCoche(): Vehiculo {
         return repository.getOldestCoche()
+    }
+
+    override fun getOldestCoche2Puertas(): Vehiculo {
+        return repository.getOldestCoche2Puertas()
     }
 
     override fun getCountVehiculos(): Map<String, Int> {
