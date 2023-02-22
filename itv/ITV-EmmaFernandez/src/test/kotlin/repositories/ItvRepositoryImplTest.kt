@@ -2,6 +2,7 @@ package repositories
 
 import models.Coche
 import models.Moto
+import org.junit.jupiter.api.Assertions.assertAll
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
@@ -36,6 +37,15 @@ class ItvRepositoryImplTest {
     @Test
     fun getVehiculoMasModerno() {
         assertEquals(vehiculos[3], repository.getVehiculoMasModerno())
+    }
+
+    @Test
+    fun getVehiculosMarca() {
+        assertAll(
+            { assertEquals(listOf(vehiculos[0], vehiculos[2]), repository.getVehiculosMarca("Marca1")) },
+            { assertEquals(listOf(vehiculos[1]), repository.getVehiculosMarca("Marca2")) },
+            { assertEquals(listOf(vehiculos[3]), repository.getVehiculosMarca("Marca3")) }
+        )
     }
 
     @Test
