@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="controler.HospitalControllerTest" tests="27" skipped="0" failures="0" errors="0" timestamp="2023-03-01T19:52:56" hostname="DESKTOP-F9O5QV3" time="7.144">
+  <properties/>
+  <testcase name="numPacientesListas()" classname="controler.HospitalControllerTest" time="5.788"/>
+  <testcase name="isCompletoMapas()" classname="controler.HospitalControllerTest" time="0.02"/>
+  <testcase name="todosPacientesConjuntos()" classname="controler.HospitalControllerTest" time="0.335"/>
+  <testcase name="numPacientesPorTipoListas()" classname="controler.HospitalControllerTest" time="0.009"/>
+  <testcase name="numPacientesConjuntos()" classname="controler.HospitalControllerTest" time="0.006"/>
+  <testcase name="ingresarMapas()" classname="controler.HospitalControllerTest" time="0.009"/>
+  <testcase name="ingresarConjuntos()" classname="controler.HospitalControllerTest" time="0.008"/>
+  <testcase name="numPacientesMapas()" classname="controler.HospitalControllerTest" time="0.007"/>
+  <testcase name="pacientesOrdeFechaIngresoMapas()" classname="controler.HospitalControllerTest" time="0.263"/>
+  <testcase name="todosPacientesMapas()" classname="controler.HospitalControllerTest" time="0.014"/>
+  <testcase name="isCompletoListas()" classname="controler.HospitalControllerTest" time="0.007"/>
+  <testcase name="pacientesPorNombreIngresoMapas()" classname="controler.HospitalControllerTest" time="0.016"/>
+  <testcase name="pacientesPorTipoListas()" classname="controler.HospitalControllerTest" time="0.32"/>
+  <testcase name="ingresarListas()" classname="controler.HospitalControllerTest" time="0.04"/>
+  <testcase name="numPacientesPorTipoMapas()" classname="controler.HospitalControllerTest" time="0.009"/>
+  <testcase name="isCompletoConjuntos()" classname="controler.HospitalControllerTest" time="0.012"/>
+  <testcase name="pacientesPorTipoMapas()" classname="controler.HospitalControllerTest" time="0.018"/>
+  <testcase name="pacientesPorDniListas()" classname="controler.HospitalControllerTest" time="0.016"/>
+  <testcase name="pacientesPorNombreIngresoConjuntos()" classname="controler.HospitalControllerTest" time="0.014"/>
+  <testcase name="pacientesPorNombreIngresoListas()" classname="controler.HospitalControllerTest" time="0.012"/>
+  <testcase name="pacientesOrdeFechaIngresoConjuntos()" classname="controler.HospitalControllerTest" time="0.027"/>
+  <testcase name="pacientesPorDniConjuntos()" classname="controler.HospitalControllerTest" time="0.021"/>
+  <testcase name="pacientesPorDniMapas()" classname="controler.HospitalControllerTest" time="0.03"/>
+  <testcase name="numPacientesPorTipoConjuntos()" classname="controler.HospitalControllerTest" time="0.007"/>
+  <testcase name="todosPacientesListas()" classname="controler.HospitalControllerTest" time="0.024"/>
+  <testcase name="pacientesOrdeFechaIngresoListas()" classname="controler.HospitalControllerTest" time="0.019"/>
+  <testcase name="pacientesPorTipoConjuntos()" classname="controler.HospitalControllerTest" time="0.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
