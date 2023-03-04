@@ -5,7 +5,7 @@ import FunctionalITV.models.Vehicle
 interface ICrudITV<T> {
     fun getAll(): List<T>
 
-    fun getOnlyCars(): List<Vehicle>
+    fun getOnlyCars(): List<FunctionalITV.models.Car>
 
     fun getMoreModern(): T
 

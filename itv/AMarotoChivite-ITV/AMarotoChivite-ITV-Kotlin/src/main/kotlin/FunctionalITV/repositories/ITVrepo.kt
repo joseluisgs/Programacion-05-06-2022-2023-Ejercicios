@@ -11,10 +11,12 @@ class ITVrepo : ICrudITV<Vehicle> {
     private val repository = mutableListOf<Vehicle>()
 
     init {
-        repository.add(Car("Toyota", 1980, true, 320, 2))
+        repository.add(Car("Toyota", 1972, true, 320, 2))
+        repository.add(Car("Toyota", 1980, true, 330, 2))
         repository.add(Car("Citroen", 1975, false, 200, 4))
         repository.add(Car("Mazda", 1969, true, 500, 3))
         repository.add(Moto("Yamaha", 2015, true, 150, 4))
+        repository.add(Moto("Yamaha", 2012, false, 145, 4))
         repository.add(Moto("Honda", 1999, false, 350, 3))
         repository.add(Moto("BMW", 2001, true, 300, 6))
     }
@@ -23,8 +25,11 @@ class ITVrepo : ICrudITV<Vehicle> {
         return repository.toList()
     }
 
-    override fun getOnlyCars(): List<Vehicle> {
-        return repository.filter { it::class.simpleName == Car::class.simpleName }
+    override fun getOnlyCars(): List<Car> {
+        return repository.filter { it::class.simpleName == Car::class.simpleName } as List<Car>
+        /*=== Otra opción ===
+        return repository.filterIsInstance<Car>()
+         */
     }
 
     override fun getMoreModern(): Vehicle {
@@ -55,6 +60,7 @@ class ITVrepo : ICrudITV<Vehicle> {
 
     override fun getCarMoreAncientWithMoreTwoDoors(): Vehicle {
         val carList = repository.filter { it::class.simpleName == Car::class.simpleName }
+        // val carlist = repository.filterIsInstance<Car>()
         return carList
             .filter { (it as Car).numDoors > 2 }
             .minBy { it.anyo }
