@@ -4,7 +4,7 @@ import exceptions.*
 import interfaces.ItvExtension
 import models.*
 
-class ItvController(val repository: ItvExtension): ItvExtension {
+class ItvController(private val repository: ItvExtension): ItvExtension {
     override fun isFull(): Boolean {
         return repository.isFull()
     }
