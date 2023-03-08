@@ -31,13 +31,7 @@ class HospitalRepoConjunto(private val maxSize: Int = 50): HospitalExtension {
     }
 
     override fun pacientesPorTipo(tipo: TipoPaciente): List<Paciente> {
-        //Dos formas de hacerlo
         return pacientes.filter { it.tipo == tipo }
-        /*val list = mutableListOf<Paciente>()
-        for (i in pacientes){
-            if (i.tipo == tipo) list.add(i)
-        }
-        return list.toList()*/
     }
 
     override fun numPacientePorTipo(tipo: TipoPaciente): Int {
@@ -57,12 +51,6 @@ class HospitalRepoConjunto(private val maxSize: Int = 50): HospitalExtension {
     override fun find(dni: String): Paciente? {
         // Programación funcional, mejor modo de hacerlo
         return pacientes.find { it.dni == dni }
-
-        // For each, mas lento
-        /*for (i in pacientes){
-            if (i.dni == dni) return i
-        }
-        return null*/
     }
 
     override fun delete(dni: String): Paciente? {

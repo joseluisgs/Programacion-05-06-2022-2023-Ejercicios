@@ -17,7 +17,6 @@ class HospitalRepoList(private val maxSize: Int = 50): HospitalExtension {
 
     override fun pacientesOrdeFechaIngreso(): List<Paciente> {
         return pacientes.sortedBy { it.fechaIgreso }
-        //return orderBy { p1, p2 -> p1.fechaIgreso.compareTo(p2.fechaIgreso) }
     }
 
     override fun pacientesOrdeNombre(): List<Paciente> {
@@ -28,19 +27,8 @@ class HospitalRepoList(private val maxSize: Int = 50): HospitalExtension {
         return pacientes.sortedBy { it.dni }
     }
 
-    /*private fun orderBy(orden: (Paciente, Paciente) -> Int): List<Paciente> {
-        val list = pacientes.toMutableList()
-        list.sortWith(orden)
-        return list.toList()
-    }*/
-
     override fun pacientesPorTipo(tipo: TipoPaciente): List<Paciente> {
         return pacientes.filter { it.tipo == tipo }
-        /*val list = mutableListOf<Paciente>()
-        for (i in pacientes){
-            if (i.tipo == tipo) list.add(i)
-        }
-        return list.toList()*/
     }
 
     override fun numPacientePorTipo(tipo: TipoPaciente): Int {
@@ -60,22 +48,10 @@ class HospitalRepoList(private val maxSize: Int = 50): HospitalExtension {
             pacientes.add(paciente)
             return paciente
         }
-
-        /*for (i in pacientes.indices) {
-            if (paciente.dni != pacientes[i].dni) continue
-            pacientes[i] = paciente
-            return paciente
-        }
-        pacientes.add(paciente)
-        return paciente*/
     }
 
     override fun find(dni: String): Paciente? {
         return pacientes.find { it.dni == dni }
-        /*for (i in pacientes){
-            if (i.dni == dni) return i
-        }
-        return null*/
     }
 
     override fun delete(dni: String): Paciente? {
@@ -92,8 +68,5 @@ class HospitalRepoList(private val maxSize: Int = 50): HospitalExtension {
     override fun saveAll(array: List<Paciente>) {
         if (estaCompleto()) return
         array.forEach{ save(it) }
-        /*for (i in array){
-            save(i)
-        }*/
     }
 }
