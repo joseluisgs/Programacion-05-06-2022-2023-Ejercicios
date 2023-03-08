@@ -1,3 +1,3 @@
 
-rootProject.name = "MixPro"
+rootProject.name = "AMarotoChivite-ITV-Kotlin"
 

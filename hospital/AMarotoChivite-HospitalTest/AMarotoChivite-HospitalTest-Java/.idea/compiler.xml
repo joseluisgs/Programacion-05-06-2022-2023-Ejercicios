@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="AMarotoChivite-HospitalTest-Java" />
         <module name="Ejercicios_Intermedios_JavaMaven" />
       </profile>
     </annotationProcessing>
