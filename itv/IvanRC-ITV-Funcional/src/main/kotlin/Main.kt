@@ -1,8 +1,6 @@
 import models.Coche
 import models.Moto
 import models.Vehiculo
-import kotlin.math.roundToInt
-import kotlin.math.roundToLong
 
 fun main(args: Array<String>) {
     val misVehiculos = listOf<Vehiculo>(
@@ -14,65 +12,83 @@ fun main(args: Array<String>) {
         Coche("Seat", 1256,  2004, false, 6)
     )
 
-    //Mostrar todos lo vehiculos:
-    misVehiculos.forEach{ println(it) }
+    //Mostrar todos los vehciulos:
+    val lista = misVehiculos
+    lista.forEach{println(it)}
     println()
 
-    //Mostrar solo los coches:
-    misVehiculos.filterIsInstance<Coche>().forEach { println(it) }
+    //mostrar solo coches:
+    val lista1 = misVehiculos.filter{it is Coche}
+    lista1.forEach{println(it)}
     println()
 
-    //Mostrar el vehiculo más moderno
-    println(misVehiculos.maxBy { it.añoMatriculacion })
+    //mostrar vehículo más moderno:
+    val vehiculo = misVehiculos.maxBy{ it.añoMatriculacion }
+    println(vehiculo)
     println()
 
-    //Mostrar el vehiculo con menos kilometros:
-    println(misVehiculos.minBy { it.kilometros })
+    //sacar vehículo con menos kilómetros:
+    val vehiculo1 = misVehiculos.minBy{ it.kilometros }
+    println(vehiculo1)
     println()
 
-    //Mostrar la media de kilometros de las motos:
-    println(String.format("%.2f", misVehiculos.filterIsInstance<Moto>().map{it.kilometros}.average()))
+    //buscar por marca
+    val lista2 = misVehiculos.filter { it.modelo == "Toyota" }
+    lista2.forEach{println(it)}
     println()
 
-    //Mostrar el coche más antigüo con más de 2 puertas:
-    println(misVehiculos.filter { it is Coche && it.numeroPuertas > 2 }.minBy { it.añoMatriculacion })
+    //sacar media kilómetros motos
+    val mediaKilometrosMotos = misVehiculos.filter { it is Moto }.map {it.kilometros}.average()
+    println(mediaKilometrosMotos)
     println()
 
-    //Mostrar el número de vehículos, por cada tipo:
-    val (coches, motos) = misVehiculos.partition { it is Coche }
-    println("Hay un total de ${coches.size} Coches.")
-    println("Hay un total de ${motos.size} Motos.")
+    //sacar coche más antiguo con más de dos puertas:
+    val vehiculo2 = misVehiculos.filter { it is Coche && it.numeroPuertas > 2}.minBy { it.añoMatriculacion }
+    println(vehiculo2)
     println()
 
-    //Mostrar número de vehiculos de cada tipo que encima son aptos:
-    val (coches1, motos1) = misVehiculos.partition { it is Coche }
-    println("Hay un total de ${coches1.filter{it.Apto}.size} Coches aptos.")
-    println("Hay un total de ${motos1.filter{it.Apto}.size} Motos aptos.")
-    println()
-
-    //Mostrar por cada tipo de vehículo la media de año de fabricación:
-    val (coches2, motos2) = misVehiculos.partition { it is Coche }
-    println("La media de años de matriculacion de los Coches es: ${coches2.map{it.añoMatriculacion}.average().roundToInt()}.")
-    println("La media de años de matriculacion de las Motos es: ${motos2.map{it.añoMatriculacion}.average().roundToInt()}.")
-    println()
-
-    //Mostrar la agrupación de vehículos por su modelo:
-    misVehiculos.groupBy { it.modelo }.forEach{
-        println("${it.key}-${it.value}")
+    //obtener número de vehículos de cada tipo:
+    val mapa = misVehiculos.groupBy { if(it is Coche) "Coche" else "Moto" }.mapValues { it.value.map { it }.count()}
+    mapa.keys.forEach {
+        println("$it----${mapa[it]}")
     }
     println()
 
-    //Mostrar los vehículos ordenados por su año de matriculación:
-    misVehiculos.sortedBy { it.añoMatriculacion }.forEach { println(it) }
+    //obtener número de vehículos de cada tipo que son aptos
+    val mapa1 = misVehiculos.filter { it.Apto }.groupBy { if(it is Coche) "Coche" else "Moto" }.mapValues { it.value.map {it}.count() }
+    mapa1.keys.forEach {
+        println("$it----${mapa1[it]}")
+    }
     println()
 
-    //Mostrar todas los modelos de vehículos, ordenadas descendientemente:
-    misVehiculos.map { it.modelo }.toSortedSet{m1,m2 -> m2.compareTo(m1)}.forEach { println(it) }
+    //obtener por cada tipo la media del año de fabricación
+    val mapa2 = misVehiculos.groupBy { if(it is Coche) "Coche" else "Moto" }.mapValues { it.value.map { it.añoMatriculacion }.average()}
+    mapa2.keys.forEach {
+        println("$it----${mapa2[it]}")
+    }
     println()
 
-    //Mostrar los vehículos agrupados por modelo, y ordenados según su número de kilometros:
-    misVehiculos.groupBy { it.modelo }.forEach{
-        println("${it.key}-${it.value.sortedWith { o1,o2 -> o2.kilometros-o1.kilometros }}")
+    //obtener vehículos agrupados por marca:
+    val mapa3 = misVehiculos.groupBy { it.modelo }
+    mapa3.keys.forEach {
+        println("$it----${mapa3[it]}")
+    }
+    println()
+
+    //mostrar todos los vehículos ordenados por año:
+    val lista3 = misVehiculos.sortedWith { v1, v2 -> v1.añoMatriculacion - v2.añoMatriculacion }
+    lista3.forEach(System.out::println)
+    println()
+
+    //obtener marcas ordenadas descendentemente:
+    val lista4 = misVehiculos.map { it.modelo }.distinct().sortedByDescending { it }
+    lista4.forEach(System.out::println)
+    println()
+
+    //obtener los vehículos agrupados por marca y ordenados por kilómetros descendentemente:
+    val mapa4 = misVehiculos.sortedByDescending { it.kilometros }.groupBy { it.modelo }
+    mapa4.keys.forEach {
+        println("$it----${mapa4[it]}")
     }
     println()
 }
