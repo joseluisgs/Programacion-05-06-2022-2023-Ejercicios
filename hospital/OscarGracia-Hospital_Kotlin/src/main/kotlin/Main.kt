@@ -1,13 +1,12 @@
-import controlers.MedicosControler
+import controlers.ControllerHospital
 import models.Paciente
 import models.TipoPaciente
-import repositories.RepositoryConjunto
 import repositories.RepositoryMap
 
 fun main() {
     println("Hola Hospital!")
 
-    val medicosController = MedicosControler(RepositoryMap())
+    val medicosController = ControllerHospital(RepositoryMap())
     //probamos obtener todos
     var res = medicosController.obtenertodosPacientes()
     println(res.toString())
