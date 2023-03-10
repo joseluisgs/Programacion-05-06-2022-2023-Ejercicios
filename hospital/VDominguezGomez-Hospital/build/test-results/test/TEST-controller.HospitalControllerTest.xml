@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="controller.HospitalControllerTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2023-02-17T05:51:49" hostname="DESKTOP-2RIMJPQ" time="0.351">
+  <properties/>
+  <testcase name="darAltaFallido()" classname="controller.HospitalControllerTest" time="0.153"/>
+  <testcase name="isHospitalCompleto()" classname="controller.HospitalControllerTest" time="0.003"/>
+  <testcase name="getAll()" classname="controller.HospitalControllerTest" time="0.148"/>
+  <testcase name="orderByNombre()" classname="controller.HospitalControllerTest" time="0.003"/>
+  <testcase name="orderByFechaIngreso()" classname="controller.HospitalControllerTest" time="0.004"/>
+  <testcase name="ingresar()" classname="controller.HospitalControllerTest" time="0.006"/>
+  <testcase name="pacientesPorTipo()" classname="controller.HospitalControllerTest" time="0.006"/>
+  <testcase name="numPacientesTipo()" classname="controller.HospitalControllerTest" time="0.006"/>
+  <testcase name="numPacientes()" classname="controller.HospitalControllerTest" time="0.003"/>
+  <testcase name="getByDNINotFound()" classname="controller.HospitalControllerTest" time="0.004"/>
+  <testcase name="darAlta()" classname="controller.HospitalControllerTest" time="0.005"/>
+  <testcase name="ingresarFallido()" classname="controller.HospitalControllerTest" time="0.002"/>
+  <testcase name="getByDNI()" classname="controller.HospitalControllerTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

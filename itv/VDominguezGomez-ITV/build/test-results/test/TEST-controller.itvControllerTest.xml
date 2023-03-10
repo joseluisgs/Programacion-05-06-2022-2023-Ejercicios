@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="controller.itvControllerTest" tests="22" skipped="0" failures="0" errors="0" timestamp="2023-02-24T21:21:40" hostname="LAPTOP-A670VL4C" time="0.453">
+  <properties/>
+  <testcase name="mostrarMotosTest()" classname="controller.itvControllerTest" time="0.258"/>
+  <testcase name="mediaAnyosFabricacionVehiculosTest()" classname="controller.itvControllerTest" time="0.065"/>
+  <testcase name="vehiculosPorMarcaTest()" classname="controller.itvControllerTest" time="0.004"/>
+  <testcase name="vehiculoMenosKilometrajeTest()" classname="controller.itvControllerTest" time="0.053"/>
+  <testcase name="mediaAnyosFabricacionCochesTest()" classname="controller.itvControllerTest" time="0.004"/>
+  <testcase name="numMotosTest()" classname="controller.itvControllerTest" time="0.004"/>
+  <testcase name="vehiculoMasModernoNoEncontradoTest()" classname="controller.itvControllerTest" time="0.005"/>
+  <testcase name="mostrarCochesTest()" classname="controller.itvControllerTest" time="0.004"/>
+  <testcase name="numMotosAptasTest()" classname="controller.itvControllerTest" time="0.003"/>
+  <testcase name="numVehiculosAptosTest()" classname="controller.itvControllerTest" time="0.003"/>
+  <testcase name="vehiculoMenosKilometrajeNoEncontradoTest()" classname="controller.itvControllerTest" time="0.004"/>
+  <testcase name="vehiculosPorMarcaOrdenadoKmDescendente()" classname="controller.itvControllerTest" time="0.003"/>
+  <testcase name="numCochesTest()" classname="controller.itvControllerTest" time="0.002"/>
+  <testcase name="numVehiculosTipoTest()" classname="controller.itvControllerTest" time="0.003"/>
+  <testcase name="vehiculoMasModernoTest()" classname="controller.itvControllerTest" time="0.004"/>
+  <testcase name="mediaKilometrajeMotosTest()" classname="controller.itvControllerTest" time="0.002"/>
+  <testcase name="mostrarTodosTest()" classname="controller.itvControllerTest" time="0.004"/>
+  <testcase name="mediaAnyosFabricacionMotosTest()" classname="controller.itvControllerTest" time="0.002"/>
+  <testcase name="vehiculoMasAntiguoConMasDeDosPuertasTest()" classname="controller.itvControllerTest" time="0.003"/>
+  <testcase name="vehiculosOrdenadosAnyoTest()" classname="controller.itvControllerTest" time="0.003"/>
+  <testcase name="ordenarMarcasDescendenteTest()" classname="controller.itvControllerTest" time="0.003"/>
+  <testcase name="numCochesAptosTest()" classname="controller.itvControllerTest" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
