@@ -1,6 +1,6 @@
 # Programación - 05-06 Programación Funcional, Genéricos y Colecciones - Ejercicios
 
-Tema 06-06 05-06 Programación Funcional, Genéricos y Colecciones. 1DAM. Curso 2022/2023.
+Tema 05-06 Programación Funcional, Genéricos y Colecciones. 1DAM. Curso 2022/2023.
 
 ![imagen](https://raw.githubusercontent.com/joseluisgs/Programacion-00-2022-2023/master/images/programacion.png)
 
